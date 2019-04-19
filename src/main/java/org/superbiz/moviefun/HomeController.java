@@ -1,6 +1,8 @@
 package org.superbiz.moviefun;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.superbiz.moviefun.albums.Album;
 import org.superbiz.moviefun.albums.AlbumFixtures;
@@ -18,6 +20,12 @@ public class HomeController {
     private final AlbumsBean albumsBean;
     private final MovieFixtures movieFixtures;
     private final AlbumFixtures albumFixtures;
+
+    @Autowired
+    private PlatformTransactionManager moviesPlatformTransactionManager;
+
+    @Autowired
+    private PlatformTransactionManager albumsPlatformTransactionManager;
 
     public HomeController(MoviesBean moviesBean, AlbumsBean albumsBean, MovieFixtures movieFixtures, AlbumFixtures albumFixtures) {
         this.moviesBean = moviesBean;

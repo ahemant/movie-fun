@@ -1,0 +1,108 @@
+Getting env variables for app moviefun in org DellEMC_PAL / space aswathy_hemant@dell.com as aswathy_hemant@dell.com...
+OK
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "cleardb": [
+   {
+    "binding_name": null,
+    "credentials": {
+     "hostname": "us-cdbr-iron-east-02.cleardb.net",
+     "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/ad_e08c340f9f2ff21?user=b15f2c7ad1c77c\u0026password=0d61d799",
+     "name": "ad_e08c340f9f2ff21",
+     "password": "0d61d799",
+     "port": "3306",
+     "uri": "mysql://b15f2c7ad1c77c:0d61d799@us-cdbr-iron-east-02.cleardb.net:3306/ad_e08c340f9f2ff21?reconnect=true",
+     "username": "b15f2c7ad1c77c"
+    },
+    "instance_name": "movies-mysql",
+    "label": "cleardb",
+    "name": "movies-mysql",
+    "plan": "spark",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "Data Stores",
+     "Cloud Databases",
+     "Developer Tools",
+     "Web-based",
+     "Data Store",
+     "Development and Test Tools",
+     "Online Backup \u0026 Storage",
+     "Single Sign-On",
+     "Buyable",
+     "mysql",
+     "relational",
+     "Cloud Security and Monitoring"
+    ],
+    "volume_mounts": []
+   },
+   {
+    "binding_name": null,
+    "credentials": {
+     "hostname": "us-cdbr-iron-east-02.cleardb.net",
+     "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-02.cleardb.net/ad_7bf0584b54017f5?user=bb247863d831dd\u0026password=e0166635",
+     "name": "ad_7bf0584b54017f5",
+     "password": "e0166635",
+     "port": "3306",
+     "uri": "mysql://bb247863d831dd:e0166635@us-cdbr-iron-east-02.cleardb.net:3306/ad_7bf0584b54017f5?reconnect=true",
+     "username": "bb247863d831dd"
+    },
+    "instance_name": "albums-mysql",
+    "label": "cleardb",
+    "name": "albums-mysql",
+    "plan": "spark",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "Data Stores",
+     "Cloud Databases",
+     "Developer Tools",
+     "Web-based",
+     "Data Store",
+     "Development and Test Tools",
+     "Online Backup \u0026 Storage",
+     "Single Sign-On",
+     "Buyable",
+     "mysql",
+     "relational",
+     "Cloud Security and Monitoring"
+    ],
+    "volume_mounts": []
+   }
+  ]
+ }
+}
+
+{
+ "VCAP_APPLICATION": {
+  "application_id": "bdb22848-c6f8-4d74-a272-e52b3be1187f",
+  "application_name": "moviefun",
+  "application_uris": [
+   "moviefun-quick-kob.cfapps.io"
+  ],
+  "application_version": "7306ca36-d440-47cc-a93c-b9cc88ee15bf",
+  "cf_api": "https://api.run.pivotal.io",
+  "limits": {
+   "disk": 1024,
+   "fds": 16384,
+   "mem": 1024
+  },
+  "name": "moviefun",
+  "space_id": "ecf6431d-90b0-4e0f-8d0a-f9103bca89db",
+  "space_name": "aswathy_hemant@dell.com",
+  "uris": [
+   "moviefun-quick-kob.cfapps.io"
+  ],
+  "users": null,
+  "version": "7306ca36-d440-47cc-a93c-b9cc88ee15bf"
+ }
+}
+
+No user-defined env variables have been set
+
+No running env variables have been set
+
+No staging env variables have been set
+

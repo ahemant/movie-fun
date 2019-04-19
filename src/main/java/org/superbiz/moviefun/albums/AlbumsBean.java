@@ -17,7 +17,11 @@
 package org.superbiz.moviefun.albums;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,12 +31,21 @@ import java.util.List;
 @Repository
 public class AlbumsBean {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "albums_unit")
     private EntityManager entityManager;
 
-    @Transactional
+    private TransactionTemplate transactionTemplate;
+
+    public AlbumsBean(PlatformTransactionManager albumsPlatformTransactionManager) {
+        this.transactionTemplate = new TransactionTemplate(albumsPlatformTransactionManager);
+    }
+
     public void addAlbum(Album album) {
-        entityManager.persist(album);
+        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+            protected void doInTransactionWithoutResult(TransactionStatus status) {
+                entityManager.persist(album);
+            }
+        });
     }
 
     public List<Album> getAlbums() {
